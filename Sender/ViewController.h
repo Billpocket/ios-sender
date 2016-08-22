@@ -23,6 +23,7 @@
     IBOutlet UITextField *text12;
     IBOutlet UISwitch *swtPIN;
     IBOutlet UILabel *lblPINToken;
+    __weak IBOutlet UIScrollView *scroll;
 }
 
 -(IBAction)openReceiverApp:(id)sender;

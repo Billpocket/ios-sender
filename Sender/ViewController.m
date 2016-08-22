@@ -27,8 +27,7 @@
 @synthesize text11;
 @synthesize text12;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [text1 setDelegate:self];
     [text2 setDelegate:self];
     [text3 setDelegate:self];
@@ -51,8 +50,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -122,6 +120,16 @@
     text10.text = @"";
     text11.text = @"";
     text12.text = @"";
+}
+
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    CGPoint offset = CGPointMake(0, textField.frame.origin.y);
+    [scroll setContentOffset:offset animated:true];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [scroll setContentOffset:CGPointMake(0, 0) animated:true];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
